@@ -1,0 +1,9 @@
+<div ba-panel ba-panel-title="Alarms list">
+  <div style="max-height: 35vh !important; overflow-y: scroll !important;">
+    <div class="alert bg-success" ng-if="alarm.length <= 0" style=" margin-bottom: 5px !important; text-align: center !important;"><strong>No alarms received</strong></div>
+    <div style="margin-bottom: 5px !important; text-align: center !important;" ng-repeat="item in alarm" class="alert bg-danger closeable" role="alert">
+      <button ng-click="deleteAlarm($index)" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong><i class="icon fa fa-warning"></i> Sensor {{item.sensorId}} detected a {{textLabel(item.type)}} at {{ item.timestamp | date:'dd/MM/yyyy HH:mm:s'}}</strong>
+    </div>
+  </div>
+</div>
